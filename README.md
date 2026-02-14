@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<img src="https://github.com/TheAlmightyGuard/MiKontrol-Dashboard/blob/6922d32bb6573b43b017e776316a8a48691587ae/public/project_logo.png" width="250" height="250">
 
-## Getting Started
+# Mikoto Dashboard
 
-First, run the development server:
+The Mikoto Dashboard is the web-app based central control hub for managing the Mikoto Management application.\
+This web-app was created through the usage of the frameworks and systems of Next.js, React.js, Typescript, Supabase and styled-components.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Hosted on Vercel, it provides users a simple way to control their own copy of Mikoto Management within their discord servers without having the need to open the Discord application itself.\
+It is capable of user-friendly moderation, customization, custom command creation and much more!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Access
+The web-app is currently accesible through [https://mikoto-dashboard.vercel.app/dashboard] to the public.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Date of progression
+Start of production: Februaru 14, 2026\
+Mikoto Dashboard v0.1a ALPHA-RELEASE: TBD
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Project Roadmap (As of March 14th, 2025)
+Below is the roadmap of projects to be made in order. Top to bottom in priority.
 
-## Learn More
+## [🟠] - Mikoto Dashboard
+* Platform of creation: VSCode
+* Hosting platform: Vercel
+* Main framework: Nextjs
+* Language: JavaScript, TypeScript, HTML, CSS
+* Database platform: MongoDB
 
-To learn more about Next.js, take a look at the following resources:
+### Project Phases:
+  * [🟠] Phase 1: Build pages
+  * [🟠] Phase 2: Build middleware
+  * [🔴] Phase 3: Build OAuth2 system with Supabase OAuth2
+  * [🔴] Phase 4: Linkage towards other projects
+  * [🔴] Phase 5: Create management windows
+  * [🔴] Phase 6: Stress Testing
+  * [🔴] Phase 7: Mobile capable
+  * [🔴] Phase 8: Final product for v0.1 RELEASE
+ #### Project Code:
+  * **MKTO-DB-1**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# License
+Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
