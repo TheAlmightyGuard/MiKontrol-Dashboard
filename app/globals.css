@@ -1,26 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Light (default) */
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: 23 23 23;
+
+  --navbar-bg: #121525;
+  --navbar-announcement-bg: #4a6ed85e;
+  --navbar-hover: #ffffff; 
+  --navbar-text: #e0def4;
+
+  --loginBtn-bg: #4a6ed8;
+
+
+  --font-open: "Open Sans", sans-serif;
+  /* --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono); */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark override */
+.dark {
+  --color-background: #1b1d27;
+  --color-foreground: 237 237 237;
+
+  --navbar-bg: #121525;
+  --navbar-hover: #ffffff10;
+  --navbar-text: #dcd8ff;
+
+  --loginBtn-bg: #4a6ed8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: light dark;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+.background {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  overflow-x: hidden;
+  position: relative;
+
+  background-color: var(--color-background);
 }
+
+/* Navbar CSS below */
+
+.navbar {
+  position: sticky;
+  width: 100%;
+
+  z-index: 999;
+  background-color: var(--navbar-bg);
+}
+
+.navbar-news {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  height: 50px;
+
+  background-color: var(--navbar-announcement-bg);
+}
+
+.navbar-news-message {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.navbar-container {
+  margin-inline: 100px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 80px;
+}
+
+.navbar-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10;
+
+  height: 90%;
+
+  cursor: pointer;
+
+  transition: 0.4s ease-in-out;
+  transition-property: scale;
+  transform: translateZ(0);
+}
+
+.navbar-logo:hover {
+  scale: 105%;
+}
+
+.navbar-map {
+  margin-inline: 50px;
+
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-mapbtn {
+  cursor: pointer;
+  font-size: 14px;
+  font-family: var(--font-open);
+  font-weight: 600;
+
+  color: var(--navbar-text);
+
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.navbar-mapbtn:hover {
+  background-color: var(--navbar-hover);
+}
+
+.navbar-login {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+
+  margin-left: auto;
+  
+  background-color: var(--loginBtn-bg);
+  border-radius: 10px;
+
+  padding-block: 9px;
+  padding-inline: 16px;
+}
+
+.navbar-login:hover {
+  filter: brightness(95%);
+}
+
+/* Navbar CSS above */
+
+/* ---------------- */
