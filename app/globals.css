@@ -4,6 +4,7 @@
 /* Light (default) */
 @theme {
   --color-background: #ffffff;
+  --color-background-hidden: #ffffff33;
   --color-foreground: 23 23 23;
 
   --navbar-bg: #121525;
@@ -22,6 +23,7 @@
 /* Dark override */
 .dark {
   --color-background: #1b1d27;
+  --color-background-hidden: #1b1d2733;
   --color-foreground: 237 237 237;
 
   --navbar-bg: #121525;
@@ -53,7 +55,7 @@ html {
   position: sticky;
   width: 100%;
 
-  z-index: 999;
+  z-index: 998;
   background-color: var(--navbar-bg);
 }
 
@@ -66,6 +68,10 @@ html {
   height: 50px;
 
   background-color: var(--navbar-announcement-bg);
+}
+
+.navbar-news-icon {
+  font-size: 25px;
 }
 
 .navbar-news-message {
@@ -103,13 +109,6 @@ html {
   scale: 105%;
 }
 
-.navbar-map {
-  margin-inline: 50px;
-
-  display: flex;
-  gap: 10px;
-}
-
 .navbar-mapbtn {
   cursor: pointer;
   font-size: 14px;
@@ -141,9 +140,99 @@ html {
 }
 
 .navbar-login:hover {
-  filter: brightness(95%);
+  filter: brightness(90%);
 }
+
+.navbar-hamburger {
+  color: white;
+  font-size: 28px;
+
+  margin-left: 20px;
+
+  cursor: pointer;
+}
+
+.navbar-hamburger:hover {
+  filter: brightness(80%);
+}
+
+/* Responsive Fixes below [NAVBAR] */
+
+@media (width >= 74rem) {
+  .navbar-map {
+    margin-inline: 50px;
+
+    display: flex;
+    gap: 10px;
+  }
+
+  .navbar-hamburger {
+    display: none !important;
+  }
+}
+
+@media (width < 74rem) {
+  .navbar-map {
+    display: none;
+  }
+
+  .navbar-container {
+    margin-inline: clamp(10px, 3.125vw, 40px) !important;
+  }
+
+  .navbar-login {
+    padding-block: clamp(6px, 0.454vw, 10px);
+    padding-block: 10px !important;
+    font-size: clamp(13px, 0.23vw, 16px) !important;
+    padding-inline: 13px !important;
+
+  }
+
+  .navbar-hamburger {
+    font-size: clamp(23px, 0.341vw, 26px) !important;
+    margin-left: clamp(15px, 0.568vw, 20px) !important;
+  }
+
+  .navbar-news-message {
+    font-size: clamp(13px, 0.341vw, 16px) !important;
+  }
+}
+
+/* Responsive Fixes above [NAVBAR] */
 
 /* Navbar CSS above */
 
 /* ---------------- */
+
+/* Hamburger CSS below */
+
+@media (width >= 74rem) {
+  .hamburger-menu {
+    display: none !important;
+  }
+}
+
+.hamburger-menu {
+  position: absolute;
+  width: 270px;
+  height: 100dvh;
+
+  z-index: 999;
+  background-color: var(--navbar-bg);
+}
+
+.hamburger-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-block: 40px;
+  height: auto;
+}
+
+.hamburger-title {
+  font-family: var(--font-open);
+  font-weight: 500;
+  font-size: 20px;
+}

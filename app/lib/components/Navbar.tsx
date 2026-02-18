@@ -1,10 +1,13 @@
 import Image from 'next/image';
 import logo from "@/public/navbar-logo.svg";
 import NavbarNews from './NavbarNews';
+import HamburgerMenu from './HamburgerMenu';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 export default function Navbar() {
     return (
         <>
+            <HamburgerMenu/>
             <nav className="navbar">
                 <div className="navbar-container">
                     <div className="navbar-logo">
@@ -19,6 +22,9 @@ export default function Navbar() {
                     </div>
 
                     <button className="navbar-login">Login with Discord</button>
+                    <button className="navbar-hamburger">
+                        <GiHamburgerMenu/>
+                    </button>
                 </div>
                 <NavbarNews/>
             </nav>
