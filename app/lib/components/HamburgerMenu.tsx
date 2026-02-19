@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 export default function HamburgerMenu() {
     return (
         <>
-            <nav className="hamburger-menu !hidden">
+            <nav className="hamburger-menu">
                 <div className="hamburger-container">
                     <div className="hamburger-logo" onClick={() => redirect('/')}>
                         <Image src={logo} alt="MiKontrol" width={140}/>
