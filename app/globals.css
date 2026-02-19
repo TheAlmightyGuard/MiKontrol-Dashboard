@@ -18,6 +18,9 @@
   --homepage-primaryText: #dfdcfd;
   --homepage-secondaryText: #655bcb;
 
+  --homepage-background: #4a6ed8;
+  --homepage-secondary: #3c5fc9;
+
 
   --font-open: "Open Sans", sans-serif;
   --font-lexend: "Lexend", sans-serif;
@@ -32,6 +35,7 @@
   --color-foreground: 237 237 237;
 
   --navbar-bg: #121525;
+  --navbar-announcement-bg: #4a6ed85e;
   --navbar-hover: #ffffff10;
   --navbar-text: #dcd8ff;
 
@@ -39,6 +43,9 @@
 
   --homepage-primaryText: #dfdcfd;
   --homepage-secondaryText: #655bcb;
+
+  --homepage-background: #4a6ed8;
+  --homepage-secondary: #3c5fc9;
 }
 
 html {
@@ -309,16 +316,20 @@ html {
 
 /* Homepage CSS below */
 
+/*    Introduction    */
+
 .main-content {
   display: flex;
   flex-direction: column;
   margin-block-start: 180px;
-  margin-inline: 220px;
 }
 
 .introduction-area {
   display: flex;
   flex-direction: row;
+
+  margin-inline: 220px;
+  margin-bottom: 250px;
 }
 
 .introduction-text {
@@ -367,7 +378,7 @@ html {
     max-width: 100%;
   }
 
-  .main-content {
+  .introduction-area {
     margin-inline: clamp(10px, 7.955vw, 100px) !important;
   }
 
@@ -382,6 +393,161 @@ html {
   .introduction-paragraph {
     font-size: clamp(14px, 0.227vw + 13px, 16px) !important;
     /* font-size: 14px !important; */
+  }
+}
+
+/*    Information    */
+
+.information-area {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--homepage-background);
+  min-height: min-content;
+
+  padding-top: 50px;
+  margin-bottom: 250px;
+}
+
+.information-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(1rem, 1.364vw, 1.75rem);
+  font-weight: 800;
+  font-family: var(--font-open);
+
+  text-align: center;
+}
+
+.information-sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(0,6875rem, 0.83vw, 1rem);
+  font-weight: 300;
+  font-family: var(--font-lexend);
+
+  text-align: center;
+  margin-top: 5px;
+  margin-inline: 10px;
+}
+
+.information-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
+  justify-content: center;
+  gap: 25px;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-inline: clamp(200px, 15.8vw, 300px);
+}
+
+@media (width < 74rem) {
+  .information-grid {
+    margin-inline: 50px !important;
+    gap: 50px !important;
+  }
+}
+
+.information-grid-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: start;
+}
+
+.information-grid-image {
+  background-color: var(--homepage-secondary);
+  
+  font-size: 70px;
+
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.information-grid-header {
+  margin-top: 5px;
+
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-lexend);
+}
+
+.information-grid-paragraph {
+  text-align: center;
+  align-items: center;
+
+  font-size: 14px;
+}
+
+/*    Privacy Banner    */
+
+.privacy-banner-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: 60px;
+
+  margin-bottom: 200px;
+  
+}
+
+.privacy-banner-icon {
+  font-size: clamp(6.25rem, 7.955vw, 10.625rem);
+  transform: translateZ(0);
+}
+
+.privacy-banner-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 550px;
+}
+
+.privacy-banner-header {
+  font-size: clamp(20px, 2.272vw, 40px);
+  font-weight: 600;
+  font-family: var(--font-lexend);
+
+  text-align: start;
+
+  color: var(--homepage-primaryText);
+}
+
+.privacy-banner-paragraph {
+  text-align: center;
+  font-size: 15px;
+  
+  font-family: var(--font-open);
+
+  margin-inline: 30px;
+}
+
+@media (width < 80rem) {
+  .privacy-banner-area {
+    gap: 10px !important;
+  }
+}
+
+
+@media (width < 40rem) {
+  .privacy-banner-paragraph {
+    text-align: start !important;
+    margin-inline: 0 !important;
+  }
+
+  .privacy-banner-area {
+    margin-inline: 50px !important;
+    gap: 30px !important;
   }
 }
 
