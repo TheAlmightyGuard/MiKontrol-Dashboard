@@ -7,10 +7,15 @@ import HamburgerMenu from './HamburgerMenu';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { redirect } from 'next/navigation';
 
+import { useState } from 'react';
+
 export default function Navbar() {
+
+    const [isOpen, setHamburger] = useState(false)
+
     return (
         <>
-            <HamburgerMenu/>
+            <HamburgerMenu isOpen={isOpen}/>
             <nav className="navbar">
                 <div className="navbar-container">
                     <div className="navbar-logo" onClick={() => redirect('/')}>
@@ -26,7 +31,7 @@ export default function Navbar() {
                     </div>
 
                     <button className="navbar-login" onClick={() => redirect('https://api.mikontrol.ca/auth/login')}>Login with Discord</button>
-                    <button className="navbar-hamburger">
+                    <button className="navbar-hamburger" onClick={() => setHamburger(!isOpen)}>
                         <GiHamburgerMenu/>
                     </button>
                 </div>

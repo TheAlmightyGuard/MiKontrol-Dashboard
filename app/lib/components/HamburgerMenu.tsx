@@ -2,10 +2,11 @@ import logo from "@/public/navbar-logo.svg";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
-export default function HamburgerMenu() {
+export default function HamburgerMenu({isOpen} : {isOpen : boolean}) {
+
     return (
         <>
-            <nav className="hamburger-menu">
+            <nav className={`hamburger-menu ${isOpen ? "" : "hidden"}`}>
                 <div className="hamburger-container">
                     <div className="hamburger-logo" onClick={() => redirect('/')}>
                         <Image src={logo} alt="MiKontrol" width={140}/>

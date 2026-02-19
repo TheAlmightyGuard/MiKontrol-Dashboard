@@ -194,7 +194,9 @@ html {
 
   .navbar-hamburger {
     font-size: clamp(23px, 0.341vw, 26px) !important;
-    margin-left: clamp(15px, 0.568vw, 20px) !important;
+    margin-left: 0 !important;
+    margin-right: 10px !important;
+    padding: 6px !important;
   }
 
   .navbar-news-message {
@@ -217,9 +219,8 @@ html {
 }
 
 .hamburger-menu {
-  position: absolute;
+  position: fixed;
   width: 270px;
-  height: 100dvh;
 
   z-index: 999;
   background-color: var(--navbar-bg);
@@ -230,9 +231,9 @@ html {
   display: flex;
   flex-direction: column;
 
-  margin-block: 30px;
+  margin-block-start: 30px;
   margin-inline: 20px;
-  height: 100dvh;
+  height: 100vh;
 }
 
 .hamburger-title {
@@ -383,3 +384,4 @@ html {
     /* font-size: 14px !important; */
   }
 }
+
