@@ -16,22 +16,22 @@ export default function Footer() {
                 <main className='footer-map'>
                     <section className='footer-section'>
                         <h1 className='footer-section-h1'>MiKontrol</h1>
-                        <button className='footer-section-btn'>Add to your Discord Server</button>
-                        <button className='footer-section-btn'>Documentation</button>
-                        <button className='footer-section-btn'>System Status</button>
+                        <button className='footer-section-btn' onClick={() => redirect(process.env.NEXT_PUBLIC_BOT_INVITE!)}>Add to your Discord Server</button>
+                        <button className='footer-section-btn' onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_DOCS ?? "/")}>Documentation</button>
+                        <button className='footer-section-btn' onClick={() => redirect(process.env.NEXT_PUBLIC_BOT_INVITE ?? "/")}>System Status</button>
                     </section>
 
                     <section className='footer-section'>
                         <h1 className='footer-section-h1'>Developer</h1>
-                        <button className='footer-section-btn'>Developer Portal</button>
-                        <button className='footer-section-btn'>Support</button>
+                        <button className='footer-section-btn' onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_DEVELOPER ?? "/")}>Developer Portal</button>
+                        <button className='footer-section-btn' onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_SUPPORT ?? "/")}>Support</button>
                     </section>
 
                     <section className='footer-section'>
                         <h1 className='footer-section-h1'>Legal</h1>
-                        <button className='footer-section-btn'>Privacy Policy</button>
-                        <button className='footer-section-btn'>Terms of Service</button>
-                        <button className='footer-section-btn'>Cookies Policy</button>
+                        <button className='footer-section-btn' onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_PRIVACY ?? "/")}>Privacy Policy</button>
+                        <button className='footer-section-btn' onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_TERMS ?? "/")}>Terms of Service</button>
+                        <button className='footer-section-btn' onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_COOKIES ?? "/")}>Cookies Policy</button>
                     </section>
 
                     <section className='footer-section'>
