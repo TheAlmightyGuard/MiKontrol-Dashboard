@@ -26,7 +26,7 @@ export default function Navbar() {
                         <button className="navbar-mapbtn" onClick={() => redirect('/about')}>About MiKontrol</button>
                         <button className="navbar-mapbtn" onClick={() => redirect('/features')}>Features</button>
                         <button className="navbar-mapbtn" onClick={() => redirect('https://docs.mikontrol.ca')}>Documentation</button>
-                        <button className="navbar-mapbtn" onClick={() => redirect('/support')}>Support</button>
+                        <button className="navbar-mapbtn" onClick={() => redirect('https://support.mikontrol.ca')}>Support</button>
                         <button className="navbar-mapbtn" onClick={() => redirect('https://status.mikontrol.ca')}>System Status</button>
                     </div>
 
