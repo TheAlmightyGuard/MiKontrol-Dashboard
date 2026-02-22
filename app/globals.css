@@ -570,8 +570,7 @@ html {
   background-color: var(--navbar-bg);
   min-height: 350px;
   
-  padding-block-start: 50px;
-  padding-block-end: 40px;
+  padding-block: 35px;
   padding-inline: clamp(6.25rem, 8.45vw, 12.5rem);
 }
 
@@ -681,7 +680,7 @@ html {
   margin-inline: 25px;
 
   font-family: var(--font-lexend);
-  font-size: 14px;
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
   color: var(--footer-text);
 }
 
