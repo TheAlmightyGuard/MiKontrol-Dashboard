@@ -9,6 +9,7 @@ import { MdMiscellaneousServices, MdOutlineMarkEmailRead } from 'react-icons/md'
 import { GiRadarDish } from 'react-icons/gi';
 import { BsThreeDots } from 'react-icons/bs';
 import { FaShieldAlt } from 'react-icons/fa';
+import Footer from './lib/components/Footer';
 
 export default function Home() {
 
@@ -100,6 +101,7 @@ export default function Home() {
           </main>
         </section>
       </main>
+      <Footer/>
     </div>
   );
 }
