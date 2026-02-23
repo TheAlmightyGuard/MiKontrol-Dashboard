@@ -7,7 +7,7 @@ export async function proxy(request: NextRequest) {
   var data = ''
 
   if (session) {
-    const fetched = await fetch('http://localhost:8000/auth/session', {
+    const fetched = await fetch(process.env.NEXT_PUBLIC_AUTH_SESSION!, {
       headers: {
         cookie : `session=${session.value}`
       }
