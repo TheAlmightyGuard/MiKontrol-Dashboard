@@ -12,14 +12,14 @@ export default function HamburgerMenu({isOpen} : {isOpen : boolean}) {
                         <Image src={logo} alt="MiKontrol" width={140}/>
                     </div>
                     <div className="hamburger-map">
-                        <button className="hamburger-mapbtn" onClick={() => redirect('/about')}>About MiKontrol</button>
-                        <button className="hamburger-mapbtn" onClick={() => redirect('/features')}>Features</button>
-                        <button className="hamburger-mapbtn" onClick={() => redirect('https://docs.mikontrol.ca')}>Documentation</button>
-                        <button className="hamburger-mapbtn" onClick={() => redirect('/support')}>Support</button>
-                        <button className="hamburger-mapbtn" onClick={() => redirect('https://status.mikontrol.ca')}>System Status</button>
+                        <button className="hamburger-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_ABOUT!)}>About MiKontrol</button>
+                        <button className="hamburger-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_FEATURES!)}>Features</button>
+                        <button className="hamburger-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_DOCS!)}>Documentation</button>
+                        <button className="hamburger-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_SUPPORT!)}>Support</button>
+                        <button className="hamburger-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_STATUS!)}>System Status</button>
                     </div>
 
-                    <button className="hamburger-login" onClick={() => redirect('https://api.mikontrol.ca/auth/login')}>Login with Discord</button>
+                    <button className="hamburger-login" onClick={() => redirect(process.env.NEXT_PUBLIC_AUTH_LOGIN!)}>Login with Discord</button>
                 </div>
             </nav>
         </>

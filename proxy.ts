@@ -1,20 +1,20 @@
 import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import { NextRequest } from 'next/server'
  
 export async function proxy(request: NextRequest) {
 
   const session = request.cookies.get('session')
+  const restrictedPaths = ['/dashboard']
   var data = ''
 
-  if (session) {
-    const fetched = await fetch(process.env.NEXT_PUBLIC_AUTH_SESSION!, {
-      headers: {
-        cookie : `session=${session.value}`
-      }
-    })
+  // Check IF restricted
+  if (restrictedPaths.indexOf(request.nextUrl.pathname) != -1) {
+    if (!session) {
+      return NextResponse.redirect(process.env.NEXT_PUBLIC_AUTH_LOGIN!)
+    }
 
-    data = await fetched.json()
   }
-  return NextResponse.json({sessionData : data})
+
+  return NextResponse.next()
 }
   
