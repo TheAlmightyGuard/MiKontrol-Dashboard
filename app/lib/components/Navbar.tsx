@@ -7,9 +7,11 @@ import HamburgerMenu from './HamburgerMenu';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { redirect } from 'next/navigation';
 
-import { useState } from 'react';
+import { useState, use } from 'react';
 
-export default function Navbar() {
+import { User } from "@/app/lib/interfaces/user";
+
+export default function Navbar({data} : {data : User | null}) {
 
     const [isOpen, setHamburger] = useState(false)
 
@@ -30,10 +32,23 @@ export default function Navbar() {
                         <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_STATUS!)}>System Status</button>
                     </div>
 
-                    <button className="navbar-login" onClick={() => redirect(process.env.NEXT_PUBLIC_AUTH_LOGIN!)}>Login with Discord</button>
-                    <button className="navbar-hamburger" onClick={() => setHamburger(!isOpen)}>
-                        <GiHamburgerMenu/>
-                    </button>
+                    {data != null ? 
+                        <button className='navbar-profile'>
+                            <Image className='rounded-full' src={data.avatar} alt={''} width={50} height={50}/>
+                        </button>
+                        
+                        :
+                        <>
+                            <button className="navbar-login" onClick={() => redirect(process.env.NEXT_PUBLIC_AUTH_LOGIN!)}>Login with Discord</button>
+                            <button className="navbar-hamburger" onClick={() => setHamburger(!isOpen)}>
+                                <GiHamburgerMenu/>
+                            </button>
+                        </>
+                        
+                    }
+                    
+
+                    
                 </div>
                 <NavbarNews/>
             </nav>
