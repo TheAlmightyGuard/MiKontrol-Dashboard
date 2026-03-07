@@ -23,7 +23,7 @@ export default async function Dashboard() {
         <Navbar data={userData}/>
       </header>
       <main>
-        <Dashboard_Onboard/>
+        <Dashboard_Onboard data={mutuals}/>
       </main>
       <Footer/>
     </div>
