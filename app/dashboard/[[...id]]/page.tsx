@@ -1,15 +1,21 @@
 "use server"
 
-import Dashboard_Onboard from "@/app/dashboard/dashboard_onboarding"
+import Dashboard_Onboard from "@/app/dashboard/[[...id]]/props/dashboard_onboarding"
 
-import Footer from "../lib/components/Footer";
-import Navbar from "../lib/components/Navbar";
+import Footer from "@/app/lib/components/Footer";
+import Navbar from "@/app/lib/components/Navbar";
 import { redirect } from "next/navigation"
 
 import { getUser, getMutual } from "@/app/lib/functions/cookies";
 
-export default async function Dashboard() {
+export default async function Dashboard({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
 
+  const { id } = await params
+  
   const userData = await getUser()
   const mutuals = await getMutual()
 
@@ -22,7 +28,13 @@ export default async function Dashboard() {
       <header>
         <Navbar data={userData}/>
       </header>
-      <Dashboard_Onboard data={mutuals}/>
+
+      {
+        id == null ? <Dashboard_Onboard data={mutuals}/>
+        :
+        <></>
+      }
+      
       <Footer/>
     </div>
   )

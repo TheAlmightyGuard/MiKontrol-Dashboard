@@ -4,7 +4,7 @@ import { Mutuals, MutualGuild } from "@/app/lib/interfaces/user";
 import GuildCard from "@/app/lib/components/dashboard/onboard/GuildCard";
 
 import { IoIosAddCircleOutline } from "react-icons/io";
-import { redirect } from "next/navigation";
+import { redirect, RedirectType } from "next/navigation";
 
 export default function Dashboard_Onboard({data} : {data : Mutuals}) {
 
@@ -29,7 +29,7 @@ export default function Dashboard_Onboard({data} : {data : Mutuals}) {
                         ))
                     }
 
-                    <button className="dashboard-onboard-guild-btn" onClick={(e) => {redirect(process.env.NEXT_PUBLIC_WEB_SETUP!)}}>
+                    <button className="dashboard-onboard-guild-btn" onClick={(e) => {redirect(process.env.NEXT_PUBLIC_WEB_SETUP!, RedirectType.push)}}>
                         <div className="flex items-center justify-center text-9xl w-25 h-25">
                             <IoIosAddCircleOutline/>
                         </div>

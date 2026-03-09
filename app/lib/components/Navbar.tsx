@@ -12,7 +12,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { RxQuestionMarkCircled } from "react-icons/rx";
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-import { redirect } from 'next/navigation';
+import { redirect, RedirectType } from 'next/navigation';
 
 import { useState } from 'react';
 
@@ -28,16 +28,16 @@ export default function Navbar({data} : {data : User | null}) {
             <HamburgerMenu isOpen={isOpen}/>
             <nav className="navbar">
                 <div className="navbar-container">
-                    <div className="navbar-logo" onClick={() => redirect('/')}>
+                    <div className="navbar-logo" onClick={() => redirect('/', RedirectType.push)}>
                         <Image src={logo} alt="MiKontrol" width={180}/>
                     </div>
 
                     <div className="navbar-map">
-                        <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_ABOUT!)}>About MiKontrol</button>
-                        <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_FEATURES!)}>Features</button>
-                        <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_DOCS!)}>Documentation</button>
-                        <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_SUPPORT!)}>Support</button>
-                        <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_STATUS!)}>System Status</button>
+                        <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_ABOUT!, RedirectType.push)}>About MiKontrol</button>
+                        <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_FEATURES!, RedirectType.push)}>Features</button>
+                        <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_DOCS!, RedirectType.push)}>Documentation</button>
+                        <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_SUPPORT!, RedirectType.push)}>Support</button>
+                        <button className="navbar-mapbtn" onClick={() => redirect(process.env.NEXT_PUBLIC_WEB_STATUS!, RedirectType.push)}>System Status</button>
                     </div>
 
                     {data != null ? 
@@ -87,7 +87,7 @@ export default function Navbar({data} : {data : User | null}) {
                         </div>
                         :
                         <>
-                            <button className="navbar-login" onClick={() => redirect(process.env.NEXT_PUBLIC_AUTH_LOGIN!)}>Login with Discord</button>
+                            <button className="navbar-login" onClick={() => redirect(process.env.NEXT_PUBLIC_AUTH_LOGIN!, RedirectType.push)}>Login with Discord</button>
                             <button className="navbar-hamburger" onClick={() => setHamburger(!isOpen)}>
                                 <GiHamburgerMenu/>
                             </button>
