@@ -31,7 +31,8 @@
 
   --border-gradient: linear-gradient(90deg, var(--navbar-bg), #cecece, var(--navbar-bg));
 
-  ---onboard-guild-bg: #121525;
+  --onboard-guild-bg: #121525;
+  --onboard-guild-shadow: #000035;
 
   --font-open: "Open Sans", sans-serif;
   --font-lexend: "Lexend", sans-serif;
@@ -69,6 +70,7 @@
   --border-gradient: linear-gradient(90deg, var(--navbar-bg), #cecece, var(--navbar-bg));
 
   --onboard-guild-bg: #121525;
+  --onboard-guild-shadow: #000035;
 }
 
 html {
@@ -286,8 +288,9 @@ html {
 }
 
 .navbar-profile-button:hover {
-  border-color: var(--navbar-profile-props-border);
-  border-width: 2px;
+  outline-color: var(--navbar-profile-props-border);
+  outline-style: solid;
+  outline-width: 2px;
 }
 
 .navbar-profile-button-icon {
@@ -841,20 +844,38 @@ html {
 
 /*      Dashboard Onboarding       */
 
-.dashboard-onboard-guilds {
-  display: grid;
-
-  grid-auto-flow: column;
+.dashboard-onboard-content {
+  display: flex;
+  flex-direction: column;
 
   align-items: center;
   justify-content: center;
 
+  gap: 30px;
+
+  margin-block: 40px;
+}
+
+.dashboard-onboard-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 50px;
+
+  font-size: 21px;
+  font-family: var(--font-open);
+}
+
+.dashboard-onboard-guilds {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, 250px);
+
+  max-width: 90vw;
+
   gap: 20px;
-
-  width: 100%;
-  min-height: 100%;
-
-  margin-block: 50px;
 }
 
 .dashboard-onboard-guild-btn {
@@ -868,10 +889,28 @@ html {
 
   background-color: var(--onboard-guild-bg);
 
-  width: fit-content;
-  height: fit-content;
-  padding: 30px;
-  margin: 100px;
+  padding: 20px;
+  width: 250px;
 
   border-radius: 40px;
+
+  box-shadow: 3 5 #00000035;
+}
+
+.dashboard-onboard-guild-btn:hover {
+  outline-color: var(--navbar-profile-props-border);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+.dashboard-onboard-guild-header {
+  font-family: var(--font-open);
+  font-weight: 600;
+  font-size: 20px;
+
+  width: 100%;
+
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

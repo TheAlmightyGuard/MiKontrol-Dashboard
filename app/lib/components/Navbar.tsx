@@ -5,6 +5,8 @@ import logo from "@/public/navbar-logo.svg";
 import NavbarNews from './NavbarNews';
 import HamburgerMenu from './HamburgerMenu';
 
+import { logout } from '@/app/lib/functions/cookies';
+
 import { IoPersonCircleOutline, IoSettingsOutline } from "react-icons/io5";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { RxQuestionMarkCircled } from "react-icons/rx";
@@ -73,7 +75,7 @@ export default function Navbar({data} : {data : User | null}) {
                                         </div>
                                         Help
                                     </button>
-                                    <button className='navbar-profile-button'>
+                                    <button className='navbar-profile-button' onClick={async () => await logout()}>
                                         <div className='navbar-profile-button-icon'>
                                             <FaArrowRightLong/>
                                         </div>

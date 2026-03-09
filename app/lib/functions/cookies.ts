@@ -1,10 +1,13 @@
+"use server"
+
 import { cookies } from "next/headers"
 import { User, Mutuals } from "@/app/lib/interfaces/user"
-
-const cookieStore = await cookies()
-
+import { redirect } from "next/navigation"
 
 export async function getUser() : Promise<User | null> {
+
+    const cookieStore = await cookies()
+
     const user = await fetch(process.env.NEXT_PUBLIC_API_USER!, {
     headers: {
         cookie : `session=${cookieStore.get('session')?.value}`
@@ -21,6 +24,9 @@ export async function getUser() : Promise<User | null> {
 }
 
 export async function getMutual() : Promise<Mutuals|null> {
+
+    const cookieStore = await cookies()
+
     var mutuals = await fetch(process.env.NEXT_PUBLIC_API_MUTUALS!, {
         headers: {
         cookie : `session=${cookieStore.get('session')?.value}`
@@ -34,4 +40,10 @@ export async function getMutual() : Promise<Mutuals|null> {
     }
 
     return data
+}
+
+export async function logout() {
+    const cookieStore = await cookies()
+    cookieStore.delete('session')
+    redirect('/')
 }
