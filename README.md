@@ -3,13 +3,13 @@
 # Mikoto Dashboard
 
 The Mikoto Dashboard is the web-app based central control hub for managing the Mikoto Management application.\
-This web-app was created through the usage of the frameworks and systems of Next.js, React.js, Typescript, Supabase and styled-components.
+This web-app was created through the usage of the frameworks and systems of Next.js, React.js, Typescript and styled-components.
 
-Hosted on Vercel, it provides users a simple way to control their own copy of Mikoto Management within their discord servers without having the need to open the Discord application itself.\
+Self-hosted, it provides users a simple way to control their own copy of Mikoto Management within their discord servers without having the need to open the Discord application itself.\
 It is capable of user-friendly moderation, customization, custom command creation and much more!
 
 # Access
-The web-app is currently accesible through [https://mikoto-dashboard.vercel.app/dashboard] to the public.
+The web-app is currently accesible through [https://mikontrol.ca] to the public when released.
 
 # Date of progression
 Start of production: Februaru 14, 2026\
@@ -20,7 +20,7 @@ Below is the roadmap of projects to be made in order. Top to bottom in priority.
 
 ## [🟠] - Mikoto Dashboard
 * Platform of creation: VSCode
-* Hosting platform: Vercel
+* Hosting platform: Self-Hosted
 * Main framework: Nextjs
 * Language: JavaScript, TypeScript, HTML, CSS
 * Database platform: MongoDB
@@ -28,14 +28,14 @@ Below is the roadmap of projects to be made in order. Top to bottom in priority.
 ### Project Phases:
   * [🟠] Phase 1: Build pages
   * [🟠] Phase 2: Build middleware
-  * [🔴] Phase 3: Build OAuth2 system with Supabase OAuth2
+  * [🟠] Phase 3: Build OAuth2 & SSR through the backend
   * [🔴] Phase 4: Linkage towards other projects
   * [🔴] Phase 5: Create management windows
   * [🔴] Phase 6: Stress Testing
   * [🔴] Phase 7: Mobile capable
   * [🔴] Phase 8: Final product for v0.1 RELEASE
  #### Project Code:
-  * **MKTO-DB-1**
+  * **MKTO-WEB-1**
 
 # License
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
