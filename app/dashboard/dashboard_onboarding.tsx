@@ -3,7 +3,6 @@
 import { Mutuals, MutualGuild } from "@/app/lib/interfaces/user";
 import GuildCard from "@/app/lib/components/dashboard/onboard/GuildCard";
 
-import Image from "next/image";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { redirect } from "next/navigation";
 
