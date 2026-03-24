@@ -1,0 +1,33 @@
+name: Website Deployment
+
+on:
+  push:
+    branches:
+      - 'release'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Action
+        uses: actions/checkout@v6.0.2
+
+      - name: Cloudflared
+        uses: AnimMouse/setup-cloudflared@v2
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
+
+      - name: SSH Deployment (Tunnel)
+        run: |
+          ssh -p ${{ vars.SSH_PORT }} \
+            -o ProxyCommand="cloudflared access ssh --hostname ${{ vars.SSH_HOST }} --service-token-id ${{ secrets.CF_CLIENT_ID }} --service-token-secret ${{ secrets.CF_CLIENT_SECRET }}" \
+            ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} << 'EOF'
+              cd /home/rpastor05/MiKontrol-Dashboard
+              git switch ${{github.ref_name}}
+              git pull
+              echo ${{ secrets.SSH_PSWD }} | sudo -S systemctl restart mikontrol
+
