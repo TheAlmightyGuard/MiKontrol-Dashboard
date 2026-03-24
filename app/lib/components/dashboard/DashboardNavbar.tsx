@@ -17,9 +17,9 @@ import { redirect, RedirectType } from 'next/navigation';
 
 import { useState } from 'react';
 
-import { User, MutualGuild } from "@/app/lib/interfaces/user";
+import { User, Guild } from "@/app/lib/interfaces/user";
 
-export default function DashboardNavbar({userData, guildData} : {userData : User | null, guildData : MutualGuild | null}) {
+export default function DashboardNavbar({userData, guildData} : {userData : User | null, guildData : Guild | null}) {
 
     if (userData == null || guildData == null) {
         redirect('/dashboard', RedirectType.push)
@@ -54,7 +54,7 @@ export default function DashboardNavbar({userData, guildData} : {userData : User
                             <button className='navbar-dashboard-profile' onClick={() => {
                                 setProfileBox(!profileOpen)
                             }}>
-                                <Image className='rounded-full select-none' src={userData.avatar} alt={''} width={50} height={50}/>
+                                <Image className='rounded-full select-none' src={userData.avatar} alt={''} width={45} height={45}/>
                             </button>
 
                             <main className={`navbar-profile-dropbox ${profileOpen ? 'visible!' : 'hidden!'}`}>

@@ -40,6 +40,8 @@
   --onboard-guild-bg: #121525;
   --onboard-guild-shadow: #000035;
 
+  --overview-section-bg: #121525;
+
   --font-open: "Open Sans", sans-serif;
   --font-lexend: "Lexend", sans-serif;
   /* --font-sans: var(--font-geist-sans);
@@ -48,6 +50,8 @@
 
 /* Dark override */
 .dark {
+  --primary-text: #dcd8ff;
+
   --color-background: #1b1d27;
   --color-background-hidden: #1b1d2733;
   --color-foreground: 237 237 237;
@@ -83,6 +87,8 @@
 
   --onboard-guild-bg: #121525;
   --onboard-guild-shadow: #000035;
+
+  --overview-section-bg: #121525;
 }
 
 html {
@@ -951,7 +957,7 @@ html {
 /*      Dashboard       */
 
 .navbar-dashboard {
-  position: sticky;
+  position: fixed;
   width: 100%;
 
   z-index: 998;
@@ -1020,8 +1026,8 @@ html {
   background-color: var(--loginBtn-bg);
   border-radius: 100%;
 
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
 
   padding: 3px;
 }
@@ -1164,4 +1170,90 @@ html {
 
 .sidenav-mapbtn:hover {
   background-color: var(--navbar-hover);
+}
+
+/* Dashboard Overview */
+
+.overview-header {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  padding-inline: 40px;
+}
+
+.overview-header-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.overview-header-welcome {
+  font-family: var(--font-open);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.overview-header-name {
+  font-family: var(--font-open);
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.overview-header-id {
+  font-family: var(--font-open);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.overview-header-icon {
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+
+  outline: 3px;
+  outline-style: solid;
+  border-radius: 100%;
+
+  padding: 20px;
+}
+
+.overview-grid {
+  margin-top: 90px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-auto-rows: 250px;
+  gap: 40px;
+
+  justify-content: center;
+}
+
+.overview-section {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--overview-section-bg);
+
+  border-radius: 20px;
+}
+
+.overview-section-header {
+  margin-inline: 20px;
+  margin-top: 20px;
+
+  font-family: var(--font-lexend);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.overview-section-p {
+  margin-left: 20px;
+
+  font-family: var(--font-lexend);
+  font-weight: 700;
+  font-size: 12px;
 }

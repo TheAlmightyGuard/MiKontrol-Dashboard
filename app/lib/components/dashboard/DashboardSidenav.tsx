@@ -18,7 +18,7 @@ export default function DashboardSidenav() {
                         <AiOutlineHome/>
                     </div>
                     <div className={`sidenav-button-h1-container`}>
-                        <h1 className={`sidenav-button-h1 ${hover ? 'visible!' : 'hidden!'}`}>Guild Overview</h1>
+                        <h1 className={`sidenav-button-h1 ${hover ? 'visible!' : 'hidden!'}`}>Overview</h1>
                     </div>
                 </main>
 

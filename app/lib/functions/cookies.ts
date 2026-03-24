@@ -1,7 +1,7 @@
 "use server"
 
 import { cookies } from "next/headers"
-import { User, Mutuals } from "@/app/lib/interfaces/user"
+import { User, Mutuals, Guild, GuildMemberCount } from "@/app/lib/interfaces/user"
 import { redirect } from "next/navigation"
 
 export async function getUser() : Promise<User | null> {
@@ -23,7 +23,7 @@ export async function getUser() : Promise<User | null> {
     return data
 }
 
-export async function getMutual() : Promise<Mutuals|null> {
+export async function getMutuals() : Promise<Mutuals|null> {
 
     const cookieStore = await cookies()
 
@@ -37,6 +37,44 @@ export async function getMutual() : Promise<Mutuals|null> {
 
     if (mutuals.status == 200) {
         data  = await mutuals.json()
+    }
+
+    return data
+}
+
+export async function getGuildMembers(guildId : string) : Promise<GuildMemberCount|null> {
+
+    const cookieStore = await cookies()
+
+    var memberCount = await fetch(process.env.NEXT_PUBLIC_API_GUILDCOUNT!, {
+        headers: {
+        cookie : `session=${cookieStore.get('session')?.value}; guild=${guildId.toString()}`
+        }
+    })
+
+    var data : GuildMemberCount | null = null
+
+    if (memberCount.status == 200) {
+        data  = await memberCount.json()
+    }
+
+    return data
+}
+
+export async function getGuild(guildId : string) : Promise<Guild|null> {
+
+    const cookieStore = await cookies()
+
+    var memberCount = await fetch(process.env.NEXT_PUBLIC_API_GUILD!, {
+        headers: {
+        cookie : `session=${cookieStore.get('session')?.value}; guild=${guildId.toString()}`
+        }
+    })
+
+    var data : Guild | null = null
+
+    if (memberCount.status == 200) {
+        data  = await memberCount.json()
     }
 
     return data

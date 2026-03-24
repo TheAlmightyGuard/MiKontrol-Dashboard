@@ -5,13 +5,35 @@ export interface User {
     bot: boolean
 }
 
-export interface MutualGuild {
+export interface GuildChannelBreakdown {
     name: string,
-    id: number,
-    icon: string
+    amount: number
+}
+
+export interface Guild {
+    name: string,
+    id: string,
+    icon: string,
+    channels: GuildChannelBreakdown[],
+    owner: User,
+    totalMembers: number,
+    createdAt: number,
+    nsfw_level: number
+
+}
+
+// Important, structure is based on charts structure
+export interface GuildMemberCountByRole {
+    name: string,
+    amount: number
+}
+
+export interface GuildMemberCount {
+    by_role: GuildMemberCountByRole[],
+    total: number
 }
 
 export interface Mutuals {
-    mutual_guilds: MutualGuild[],
+    mutual_guilds: Guild[],
     mutual_count: number
 }

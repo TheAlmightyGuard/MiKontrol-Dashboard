@@ -1,6 +1,6 @@
 "use client"
 
-import { Mutuals, MutualGuild } from "@/app/lib/interfaces/user";
+import { Mutuals, Guild } from "@/app/lib/interfaces/user";
 import GuildCard from "@/app/lib/components/dashboard/onboard/GuildCard";
 
 import { IoIosAddCircleOutline } from "react-icons/io";
@@ -8,7 +8,7 @@ import { redirect, RedirectType } from "next/navigation";
 
 export default function Dashboard_Onboard({data} : {data : Mutuals}) {
 
-    var guilds : MutualGuild[] = []
+    var guilds : Guild[] = []
 
     data.mutual_guilds.forEach((data) => {
         guilds.push(data)
