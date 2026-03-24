@@ -10,7 +10,7 @@ export async function proxy(request: NextRequest) {
   var sessionJson = null
 
   if (session) {
-    const fetched = await fetch('http://localhost:8000/auth/session', {
+    const fetched = await fetch(process.env.NEXT_PUBLIC_AUTH_SESSION!, {
       headers: {
         cookie : `session=${session.value}`
       }
@@ -23,11 +23,11 @@ export async function proxy(request: NextRequest) {
 
   if (url.pathname.startsWith("/_next")) return NextResponse.next();
 
-  if (process.env.NEXT_PUBLIC_STATUS_CODE! == '1' && url.pathname != '/construction') {
-    url.pathname = '/construction'
+  if (process.env.NEXT_PUBLIC_STATUS_CODE! == '1' && url.pathname != process.env.NEXT_PUBLIC_WEB_CONSTRUCTION!) {
+    url.pathname = process.env.NEXT_PUBLIC_WEB_CONSTRUCTION!
     return NextResponse.redirect(url)
   }
-  else if (process.env.NEXT_PUBLIC_STATUS_CODE! != '1' && request.nextUrl.pathname == '/construction') {
+  else if (process.env.NEXT_PUBLIC_STATUS_CODE! != '1' && request.nextUrl.pathname == process.env.NEXT_PUBLIC_WEB_CONSTRUCTION!) {
     url.pathname = '/'
     return NextResponse.redirect(url)
   }
