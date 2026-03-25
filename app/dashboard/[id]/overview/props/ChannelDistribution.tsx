@@ -17,7 +17,7 @@ export default function ChannelDistribution({data} : {data : Guild}) {
                 <h1 className="overview-section-header">
                     Channel Distribution
                 </h1>
-                <div className="flex-1 w-full max-h-[200px] flex items-center justify-center py-5">
+                <div className="flex-1 w-full max-h-50 flex items-center justify-center py-5">
                     <DonutChart
                         data={data.channels}
                         className="w-full h-full"

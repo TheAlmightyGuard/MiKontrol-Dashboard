@@ -82,6 +82,9 @@ export async function getGuild(guildId : string) : Promise<Guild|null> {
 
 export async function logout() {
     const cookieStore = await cookies()
-    cookieStore.delete('session')
+    cookieStore.delete({
+        name: 'session',
+        path: '/'
+    })
     redirect('/')
 }
