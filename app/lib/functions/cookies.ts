@@ -81,10 +81,15 @@ export async function getGuild(guildId : string) : Promise<Guild|null> {
 }
 
 export async function logout() {
+    const isProduction = process.env.NODE_ENV == "production"
+
     const cookieStore = await cookies()
     cookieStore.delete({
         name: 'session',
-        path: '/'
+        path: '/',
+        sameSite: 'lax',
+        domain: isProduction ? '.mikontrol.ca' : undefined,
+        secure: isProduction
     })
     redirect('/')
 }
